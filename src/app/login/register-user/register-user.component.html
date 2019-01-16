@@ -1,0 +1,26 @@
+<form id = "registerform" name = "registerform" #registerdata = "ngForm" (ngSubmit) = "register(registerdata.value)">
+ <!-- Name -->
+    <label>Name</label>
+    <input type = "text" name="Name" id="Name" placeholder="Name" ngModel><br>
+<!-- Phonenumber -->
+    <label>Phone Number </label>
+    <input type = "text" name="Phonenumber" id="Phonenumber" placeholder="Phonenumber" ngModel><br>
+    <!-- Email -->
+
+    <label>Email </label>
+    <input type = "text" name="Email" id="Email" placeholder="Email" ngModel><br>
+
+    <!-- UserName -->
+       
+    <label>UserName </label>
+    <input type = "text" name="UserName" id="UserName" placeholder="UserName" ngModel><br>
+    <!-- Password -->
+
+<label>Password </label>
+    <input type = "text" name="Password" id="Password" placeholder="Password" ngModel><br>
+    <!-- Submit Button -->
+    <input type="submit" value = "login">
+    
+</form>
+<br>
+<div *ngIf="Isregister">{{sucessmessage}}</div>

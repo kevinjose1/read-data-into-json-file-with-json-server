@@ -1,0 +1,20 @@
+{
+  "register": [
+    {
+      "Name": "Abhijith",
+      "Phonenumber": "987654321",
+      "Email": "jui@gmail.com",
+      "Password": "aser",
+      "UserName": "abhi",
+      "id": 1
+    },
+    {
+      "Name": "Abhijith",
+      "Phonenumber": "987654321",
+      "Email": "jui@gmail.com",
+      "Password": "aser",
+      "UserName": "abhi123",
+      "id": 2
+    }
+  ]
+}

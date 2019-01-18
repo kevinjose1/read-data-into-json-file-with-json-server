@@ -1,0 +1,18 @@
+<form id = "postform" name = "postform" #postdata = "ngForm" (ngSubmit) = "postform(postdata.value)">
+ <!-- Post typing Box -->
+  <h3>Post Your Thoughts</h3>
+  <label>Nick Name</label>
+  <input type = "text" name="Name" id="Name" placeholder="Enter you Nick Name" ngModel><br>
+  <label>Enter your Thoughts</label>
+  <input type = "text" name="post" id="pst" placeholder="Enter you Message" ngModel><br>
+  <input type="submit" value="Post ">
+</form>
+<div *ngIf = "isposted">
+  Sucessfully Posted
+</div>
+<div class="container">
+  <div class="col-md-6 col-md-offset-3 loginBox">
+      Welcome,  {{id}}
+      <a href="javascript:void(0);" (click)="logout()">Logout</a>
+  </div>
+</div>

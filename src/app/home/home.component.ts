@@ -5,18 +5,24 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
-
+export class HomeComponent implements OnInit
+ {
+username :string;
   constructor(private http : HttpClient) { }
-  userdata :string[] //store as array userdata
+                  //store as array userdata
+  userdata :string[] 
   ngOnInit() {
-    this.http.get('http://localhost:3000/message') //get data from message.json
-    .subscribe(      //subscribe to dTA
+                 //get data from message.json
+    this.http.get('http://localhost:3000/message') 
+    .subscribe(      
+                 //subscribe to data
       data => {
-        this.userdata = data as string [];	 // fill the array
+                  // fill the array
+        this.userdata = data as string [];	 
       
       }
     )
+   
   }
 
 }

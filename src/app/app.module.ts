@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import{FormsModule} from '@angular/forms';
+import{FormsModule ,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
 //Components
@@ -12,11 +12,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginUserComponent } from './login/login-user/login-user.component';
 import { RegisterUserComponent } from './login/register-user/register-user.component';
-import {AppService} from './app.service';
+import { AuthGuard } from './auth.guard';
+import { PostingComponent } from './posting/posting.component';
+
+
 
 
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule ,
+    AppRoutingModule,
+   HttpClientModule,
+   HttpModule
+    
+  ],
   declarations: [
     AppComponent,
     HomeComponent,
@@ -24,17 +36,12 @@ import {AppService} from './app.service';
     LoginComponent,
     NavbarComponent,
     LoginUserComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
+    PostingComponent,
+   
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-   HttpClientModule,
-   HttpModule
-    
-  ],
-  providers: [AppService],
+ 
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

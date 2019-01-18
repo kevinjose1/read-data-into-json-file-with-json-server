@@ -5,10 +5,14 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { LoginUserComponent } from './login/login-user/login-user.component'
 import { RegisterUserComponent } from './login/register-user/register-user.component';
+import { PostingComponent } from './posting/posting.component';
+import{AuthGuard} from './auth.guard'
+import { AuthService } from './auth.service';
 const appRoutes :Routes = [
     { path: '', redirectTo: '/Home', pathMatch: 'full' },
     { path : 'Home' , component:HomeComponent},
     { path : 'Help' , component:HelpComponent},
+    {path :'Post' , component:PostingComponent , canActivate:[AuthGuard]}, //Providing protection to this route
     { path : 'Login' , component:LoginComponent, //Declaring Child Components
     children : [
         {
@@ -20,15 +24,16 @@ const appRoutes :Routes = [
             component:RegisterUserComponent  //Child Component
         }
     ]
-}
-
+} ,
+   
 
     
 
     ];
 @NgModule({
  imports: [RouterModule.forRoot(appRoutes)],
- exports : [RouterModule]
+ exports : [RouterModule],
+ providers:[AuthGuard]
 })
 export class AppRoutingModule 
 {
